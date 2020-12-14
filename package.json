@@ -1,0 +1,25 @@
+{
+  "name": "markov",
+  "version": "1.0.0",
+  "description": "generate realistic machine-made text from an original source text",
+  "main": "makeText.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nikgun1984/Markov-Machine.git"
+  },
+  "keywords": [
+    "markov",
+    "machine",
+    "random",
+    "state"
+  ],
+  "author": "Nick Gundobin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nikgun1984/Markov-Machine/issues"
+  },
+  "homepage": "https://github.com/nikgun1984/Markov-Machine#readme"
+}
