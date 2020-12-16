@@ -4,6 +4,7 @@
 
 const fs = require('fs');
 const axios = require('axios');
+const stripHtml = require("string-strip-html");
 
 const {MarkovMachine} = require('./markov');
 
@@ -16,11 +17,11 @@ function makeText(data) {
 }
 
 function getText(path) {
-    if (!(process.argv[3].includes('txt'))) {
-        console.log(`can’t read file or URL`);
-        return;
-    }
     if (process.argv[2] == 'file') {
+        if (!(process.argv[3].includes('txt'))) {
+            console.log(`can’t read file...`);
+            return;
+        }
         fs.readFile(path, 'utf8', function (err, data) {
             if (err) { // handle the error
                 console.log(`Error reading ${path}:\n\t${err}`);
@@ -32,9 +33,9 @@ function getText(path) {
         })
     } else {
         axios.get(path).then(result => {
-            content = result.data;
+            content = stripHtml(result.data);
             console.log(`... generated text from that url ${path} ...`);
-            makeText(content);
+            makeText(content.result);
         }).catch(err => {
             `Error reading link "${path}":\n\t${err}`
         });

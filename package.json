@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/nikgun1984/Markov-Machine#readme",
   "dependencies": {
-    "axios": "^0.21.0"
+    "axios": "^0.21.0",
+    "string-strip-html": "^7.0.3"
   }
 }

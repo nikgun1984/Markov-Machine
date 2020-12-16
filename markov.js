@@ -39,12 +39,11 @@ class MarkovMachine {
   }
   
 /** return random text from chains */
-
+  
   makeText(numWords = 100) {
       // STEPS
       // Get object with all values and respectful arrays
       const obj = this.makeChains();
-      // console.log(obj);
       // convert keys of obj into array to get an access to its strings
       const keysObj = Object.keys(obj);
       let startingVal;
@@ -66,7 +65,7 @@ class MarkovMachine {
           const randInd = Math.floor(Math.random() * arr.length);
           startingVal = arr[randInd];
 
-          if (startingVal === null) {
+          if (!startingVal) {
               break;
           }
           res.push(startingVal);
@@ -74,7 +73,7 @@ class MarkovMachine {
       return res.join(" ");
   }
   // 0   1     2      3   4   5       6      7
- // chc xhfdv hdcnz nchd zhd uzhdnc zjhdcn undefined
+ // chc xhfdv hdcnz nchd zhd uzhdnc zjhdcn undefined   <---- behavior of this code
 	makeChainsBigrams() {
 		const obj = {};
 		for (let i = 0; i < this.words.length - 1; i++) {
@@ -97,9 +96,10 @@ class MarkovMachine {
     return obj;
   }
   
+/* Improved version of makeText two words at a time*/
   makeImprovedText(numWords = 100) {
+
     const obj = this.makeChainsBigrams();
-    console.log(obj);
     const keysObj = Object.keys(obj);
     let startingVal,
         firstWord,
