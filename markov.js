@@ -38,28 +38,26 @@ class MarkovMachine { /** build markov machine; read in text.*/
 
     /** return random text from chains */
 
-    makeText(numWords = 100) { // TODO
+    makeText(numWords = 100) {
+        // STEPS
+        // Get object with all values and respectful arrays
         const obj = this.makeChains();
-        console.log(obj);
-        console.log(obj['Sam-I-am']);
-
-
+        // convert keys of obj into array to get an access to its strings
         const keysObj = Object.keys(obj);
-        console.table(keysObj)
 
-        const size = keysObj.length;
-        const genNum = Math.floor(Math.random() * (size + 1));
+        // gen random index to extract for our keysObj array
+        const genNum = Math.floor(Math.random() * (keysObj.length));
+        // get the value from array
         let startingVal = keysObj[genNum];
         const res = [];
         res.push(startingVal);
 
-        for (let i = 0; i < numWords; i++) {
-            console.log(startingVal);
-
+        for (let i = 0; i < numWords - 1; i++) {
             const arr = obj[startingVal];
-            const randInd = Math.floor(Math.random() * (arr.length + 1));
+            const randInd = Math.floor(Math.random() * (arr.length));
             startingVal = arr[randInd];
-            if (! startingVal) {
+
+            if (startingVal === null) {
                 break;
             }
             res.push(startingVal);

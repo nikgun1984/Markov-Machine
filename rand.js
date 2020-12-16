@@ -7,4 +7,3 @@ const content = fs.readFileSync("eggs.txt", 'utf8');
 const machine = new MarkovMachine(content);
 console.log(machine.words);
 console.log(machine.makeText());
-// console.log(content);

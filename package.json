@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/nikgun1984/Markov-Machine/issues"
   },
-  "homepage": "https://github.com/nikgun1984/Markov-Machine#readme"
+  "homepage": "https://github.com/nikgun1984/Markov-Machine#readme",
+  "dependencies": {
+    "axios": "^0.21.0"
+  }
 }
