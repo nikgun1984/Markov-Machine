@@ -9,8 +9,10 @@ const {MarkovMachine} = require('./markov');
 
 function makeText(data) {
     const machine = new MarkovMachine(data);
-    const text = machine.makeText();
+    const text = machine.makeImprovedText();
+    console.log('--------------------------------------------')
     console.log(text);
+    console.log('--------------------------------------------')
 }
 
 function getText(path) {

@@ -11,6 +11,9 @@ describe("testing MarkovMachine class", function () {
     test("test makeChains method", function () {
         expect(Object.keys(machine.makeChains())).toContain('cat');
         expect(machine.makeChains()["the"].length).toEqual(3);
-
     })
+
+    // test("test makeText method", function(){
+
+    // })
 })
